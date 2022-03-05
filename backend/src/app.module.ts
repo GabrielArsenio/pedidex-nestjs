@@ -10,6 +10,7 @@ import { winstonConfig } from './configs/winston.config';
 import { ClienteModule } from './cliente/cliente.module';
 import { ProdutoModule } from './produto/produto.module';
 import { PedidoItemModule } from './pedido-item/pedido-item.module';
+import { PedidoModule } from './pedido/pedido.module';
 
 @Module({
   imports: [
@@ -19,7 +20,8 @@ import { PedidoItemModule } from './pedido-item/pedido-item.module';
     AuthModule,
     ClienteModule,
     ProdutoModule,
-    PedidoItemModule
+    PedidoItemModule,
+    PedidoModule
   ],
   controllers: [],
   providers: [

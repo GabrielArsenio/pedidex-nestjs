@@ -1,3 +1,4 @@
+import { Pedido } from 'src/pedido/entities/pedido.entity';
 import { Produto } from 'src/produto/entities/produto.entity';
 import {
     BaseEntity,
@@ -18,6 +19,9 @@ export class PedidoItem extends BaseEntity {
 
     @ManyToOne(type => Produto, { nullable: false })
     produto: Produto;
+
+    @ManyToOne(type => Pedido, { nullable: false })
+    pedido: Pedido;
 
     @Column({ nullable: false, type: 'float' })
     quantidade: number;
