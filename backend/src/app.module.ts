@@ -8,6 +8,7 @@ import { APP_INTERCEPTOR } from '@nestjs/core';
 import { WinstonModule } from 'nest-winston';
 import { winstonConfig } from './configs/winston.config';
 import { ClienteModule } from './cliente/cliente.module';
+import { ProdutoModule } from './produto/produto.module';
 
 @Module({
   imports: [
@@ -15,7 +16,8 @@ import { ClienteModule } from './cliente/cliente.module';
     WinstonModule.forRoot(winstonConfig),
     UsersModule,
     AuthModule,
-    ClienteModule
+    ClienteModule,
+    ProdutoModule
   ],
   controllers: [],
   providers: [
