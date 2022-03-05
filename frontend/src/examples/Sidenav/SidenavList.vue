@@ -22,6 +22,45 @@
           url="#"
           :aria-controls="''"
           v-bind:collapse="false"
+          collapseRef="clientes"
+          navText="Clientes"
+        >
+          <template v-slot:icon>
+            <i class="material-icons-round opacity-10 fs-5">person</i>
+          </template>
+        </sidenav-collapse>
+      </li>
+      <li class="nav-item">
+        <sidenav-collapse
+          url="#"
+          :aria-controls="''"
+          v-bind:collapse="false"
+          collapseRef="produtos"
+          navText="Produtos"
+        >
+          <template v-slot:icon>
+            <i class="material-icons-round opacity-10 fs-5">sell</i>
+          </template>
+        </sidenav-collapse>
+      </li>
+      <li class="nav-item">
+        <sidenav-collapse
+          url="#"
+          :aria-controls="''"
+          v-bind:collapse="false"
+          collapseRef="pedidos"
+          navText="Pedidos"
+        >
+          <template v-slot:icon>
+            <i class="material-icons-round opacity-10 fs-5">receipt_long</i>
+          </template>
+        </sidenav-collapse>
+      </li>
+      <li class="nav-item">
+        <sidenav-collapse
+          url="#"
+          :aria-controls="''"
+          v-bind:collapse="false"
           collapseRef="tables"
           navText="Tables"
         >
