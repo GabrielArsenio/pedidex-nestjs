@@ -7,13 +7,15 @@ import { LoggerInterceptor } from './interceptors/logger.interceptor';
 import { APP_INTERCEPTOR } from '@nestjs/core';
 import { WinstonModule } from 'nest-winston';
 import { winstonConfig } from './configs/winston.config';
+import { ClienteModule } from './cliente/cliente.module';
 
 @Module({
   imports: [
     TypeOrmModule.forRoot(typeOrmConfig),
     WinstonModule.forRoot(winstonConfig),
     UsersModule,
-    AuthModule
+    AuthModule,
+    ClienteModule
   ],
   controllers: [],
   providers: [
