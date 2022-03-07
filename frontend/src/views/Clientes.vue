@@ -2,7 +2,7 @@
   <div class="container-fluid py-4">
     <div class="row">
       <div class="col-12 text-end">
-        <vmd-button color="dark" variant="gradient">
+        <vmd-button color="dark" variant="gradient" @click="$router.push('/novo-cliente')">
           <i class="fas fa-plus me-2"></i>
           Novo Cliente
         </vmd-button>
@@ -18,7 +18,7 @@
                   <tr>
                     <th
                       class="
-                        text-uppercase text-secondary text-xxs
+                        text-center text-uppercase text-secondary text-xxs
                         font-weight-bolder
                         opacity-7
                       "

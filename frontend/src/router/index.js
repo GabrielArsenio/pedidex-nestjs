@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import Dashboard from "../views/Dashboard.vue";
 import Tables from "../views/Tables.vue";
 import Clientes from "../views/Clientes.vue";
+import ClientesForm from "../views/ClientesForm.vue";
 import Billing from "../views/Billing.vue";
 import RTL from "../views/Rtl.vue";
 import Notifications from "../views/Notifications.vue";
@@ -23,7 +24,17 @@ const routes = [
   {
     path: "/clientes",
     name: "Clientes",
-    component: Clientes,
+    component: Clientes
+  },
+  {
+    path: "/novo-cliente",
+    name: "Novo Cliente",
+    component: ClientesForm
+  },
+  {
+    path: "/editar-cliente/:id",
+    name: "Editar Cliente",
+    component: ClientesForm
   },
   {
     path: "/tables",

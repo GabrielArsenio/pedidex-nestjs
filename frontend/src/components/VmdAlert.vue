@@ -17,6 +17,7 @@
       class="btn-close d-flex justify-content-center align-items-center"
       data-bs-dismiss="alert"
       aria-label="Close"
+      @click="$emit('dismiss')"
     >
       <span aria-hidden="true" class="text-lg font-weight-bold">&times;</span>
     </button>
