@@ -5,7 +5,7 @@ import { CreateProdutoDto } from './dto/create-produto.dto';
 import { UpdateProdutoDto } from './dto/update-produto.dto';
 
 @Controller('produto')
-@UseGuards(AuthGuard())
+//@UseGuards(AuthGuard())
 export class ProdutoController {
   constructor(private readonly produtoService: ProdutoService) { }
 

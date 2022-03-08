@@ -3,6 +3,8 @@ import Dashboard from "../views/Dashboard.vue";
 import Tables from "../views/Tables.vue";
 import Clientes from "../views/Clientes.vue";
 import ClientesForm from "../views/ClientesForm.vue";
+import Produtos from "../views/Produtos.vue";
+import ProdutosForm from "../views/ProdutosForm.vue";
 import Billing from "../views/Billing.vue";
 import RTL from "../views/Rtl.vue";
 import Notifications from "../views/Notifications.vue";
@@ -35,6 +37,21 @@ const routes = [
     path: "/editar-cliente/:id",
     name: "Editar Cliente",
     component: ClientesForm
+  },
+  {
+    path: "/produtos",
+    name: "Produtos",
+    component: Produtos
+  },
+  {
+    path: "/novo-produto",
+    name: "Novo Produto",
+    component: ProdutosForm
+  },
+  {
+    path: "/editar-produto/:id",
+    name: "Editar Produto",
+    component: ProdutosForm
   },
   {
     path: "/tables",
