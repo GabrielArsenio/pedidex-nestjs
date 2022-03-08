@@ -71,7 +71,7 @@
                 </thead>
                 <tbody>
                   <tr v-for="cliente in clientes" :key="cliente.id">
-                    <td>
+                    <td class="align-middle text-center text-sm">
                       <span class="align-middle text-center text-sm">{{
                         cliente.id
                       }}</span>
@@ -110,6 +110,7 @@
                         href="javascript:;"
                         class="btn btn-link text-danger text-gradient px-3 mb-0"
                         title="Excluir"
+                        @click="excluir(cliente)"
                       >
                         <i class="far fa-trash-alt me-2" aria-hidden="true"></i>
                       </a>
@@ -126,7 +127,7 @@
 </template>
 
 <script>
-import { findAll } from "../service/clientes.service";
+import { exclude, findAll } from "../service/clientes.service";
 import VmdButton from "@/components/VmdButton.vue";
 
 export default {
@@ -138,6 +139,14 @@ export default {
     return {
       clientes: [],
     };
+  },
+  methods: {
+    async excluir(model) {
+      if (confirm(`Confirma exclusão de ${model.nome}?`)) {
+        await exclude(model.id);
+        this.clientes = this.clientes.filter((c) => c.id !== model.id);
+      }
+    },
   },
   mounted() {
     findAll().then((resp) => (this.clientes = resp.data));

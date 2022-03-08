@@ -11,3 +11,5 @@ appInstance.use(store);
 appInstance.use(router);
 appInstance.use(MaterialDashboard);
 appInstance.mount("#app");
+
+export const URL_API = "http://localhost:3000";

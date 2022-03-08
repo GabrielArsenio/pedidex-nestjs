@@ -80,7 +80,7 @@
 import VmdButton from "@/components/VmdButton.vue";
 import VmdAlert from "@/components/VmdAlert.vue";
 
-import { create, findById } from "../service/clientes.service";
+import { create, findById, update } from "../service/clientes.service";
 
 export default {
   name: "clientes-form",
@@ -96,9 +96,15 @@ export default {
   },
   methods: {
     salvar(model) {
-      create(model)
-        .then(() => this.$router.push("/clientes"))
-        .catch((err) => (this.erros = err.response.data.message));
+      if (model.id) {
+        update(model.id, model)
+          .then(() => this.$router.push("/clientes"))
+          .catch((err) => (this.erros = err.response.data.message));
+      } else {
+        create(model)
+          .then(() => this.$router.push("/clientes"))
+          .catch((err) => (this.erros = err.response.data.message));
+      }
     },
   },
   mounted() {
