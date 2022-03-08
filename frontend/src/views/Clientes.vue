@@ -2,7 +2,11 @@
   <div class="container-fluid py-4">
     <div class="row">
       <div class="col-12 text-end">
-        <vmd-button color="dark" variant="gradient" @click="$router.push('/novo-cliente')">
+        <vmd-button
+          :color="$store.state.mcolor"
+          variant="gradient"
+          @click="$router.push('/novo-cliente')"
+        >
           <i class="fas fa-plus me-2"></i>
           Novo Cliente
         </vmd-button>
@@ -93,13 +97,21 @@
                       }}</span>
                     </td>
                     <td class="align-middle">
+                      <router-link
+                        class="btn btn-link text-dark px-3 mb-0"
+                        title="Editar"
+                        :to="'/editar-cliente/' + cliente.id"
+                        ><i
+                          class="fas fa-pencil-alt text-dark me-2"
+                          aria-hidden="true"
+                        ></i
+                      ></router-link>
                       <a
                         href="javascript:;"
-                        class="text-secondary font-weight-bold text-xs"
-                        data-toggle="tooltip"
-                        data-original-title="Edit user"
+                        class="btn btn-link text-danger text-gradient px-3 mb-0"
+                        title="Excluir"
                       >
-                        Edit
+                        <i class="far fa-trash-alt me-2" aria-hidden="true"></i>
                       </a>
                     </td>
                   </tr>

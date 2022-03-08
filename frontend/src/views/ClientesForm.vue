@@ -58,9 +58,15 @@
               <vmd-button
                 class="my-3 mb-2"
                 variant="gradient"
-                color="success"
+                :color="$store.state.mcolor"
                 @click="salvar(cliente)"
                 >Salvar</vmd-button
+              ><vmd-button
+                class="my-3 mb-2 m-2"
+                variant="gradient"
+                color="secondary"
+                @click="$router.go(-1)"
+                >Cancelar</vmd-button
               >
             </div>
           </div>
