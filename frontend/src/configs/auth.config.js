@@ -12,5 +12,6 @@ export function authInterceptors() {
         if (error.response.status === 401) {
             router.push('/sign-in');
         }
+        return Promise.reject(error);
     });
 }
