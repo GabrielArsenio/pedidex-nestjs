@@ -1,17 +1,34 @@
 version: '3'
-
 services:
+  backend:
+    build: ./backend
+    restart: always
+    depends_on:
+      pgsql:
+        condition: service_healthy
+    ports:
+      - 3000:3000
+  frontend:
+    build: ./frontend
+    restart: always
+    ports:
+      - 8080:80
   pgsql:
     image: postgres:alpine
     ports:
-      - '5432:5432'
+      - 5432:5432
     container_name: 'pgsql'
     restart: always
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U pedidex"]
+      interval: 50s
+      timeout: 5s
+      retries: 5
     volumes:
       - pg-data:/var/lib/postgresql/data
     environment:
       POSTGRES_USER: pguser
       POSTGRES_PASSWORD: pgpassword
-
+      POSTGRES_DB: pedidex
 volumes:
   pg-data:
