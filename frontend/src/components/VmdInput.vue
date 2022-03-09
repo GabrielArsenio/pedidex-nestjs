@@ -11,6 +11,7 @@
       :name="name"
       :id="id"
       :value="value"
+      @input="$emit('input', $event?.target?.value)"
       :placeholder="placeholder"
       :isRequired="isRequired"
       :disabled="disabled"
