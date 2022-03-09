@@ -96,4 +96,11 @@ const router = createRouter({
   linkActiveClass: "active",
 });
 
+router.beforeEach(to => {
+  if (!localStorage.getItem('token') && to.name !== 'SignIn' && to.name !== 'SignUp') {
+    return { name: 'SignIn' }
+  }
+  return true
+})
+
 export default router;
